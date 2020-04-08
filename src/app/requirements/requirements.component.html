@@ -1,0 +1,17 @@
+<div class="row">
+<ul>
+    <li *ngFor="let item of requirements">
+        <h4>
+            {{item.title}}
+        </h4>
+        <p>
+            {{item.description}}
+        </p>
+    </li>
+</ul>
+
+<p>
+    
+    <app-requirement-edit></app-requirement-edit>
+</p>
+</div>

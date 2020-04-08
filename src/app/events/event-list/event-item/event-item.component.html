@@ -1,0 +1,10 @@
+
+<div class="list-group" (click)="onSelected()">
+
+    <h4 class="list-group-heading">
+        {{event.title}}
+    </h4>
+
+    <img class="img-fluid" [src]="event.image" alt="">
+</div>
+<button class="btn btn-danger" (click)="onDelete()">Delete</button>
