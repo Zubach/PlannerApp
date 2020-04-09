@@ -1,17 +1,20 @@
 <div class="row">
+  <div class="col">
+    <div class="container">
+
+
+  <a class="btn btn-info" [routerLink]="['/add-requirements']" routerLinkActive="router-link-active" >New Requirement</a>
 <ul>
     <li *ngFor="let item of requirements">
-        <h4>
-            {{item.title}}
-        </h4>
+        <p>
+           <strong> {{item.title}} </strong>
+        </p>
         <p>
             {{item.description}}
         </p>
     </li>
 </ul>
+</div>
+</div>
 
-<p>
-    
-    <app-requirement-edit></app-requirement-edit>
-</p>
 </div>

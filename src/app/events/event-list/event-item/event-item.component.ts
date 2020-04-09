@@ -13,6 +13,7 @@ export class EventItemComponent implements OnInit {
 
 
   @Input()event: Event;
+  @Input()index: number;
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
@@ -24,9 +25,5 @@ export class EventItemComponent implements OnInit {
     this.eventService.deleteEvent(this.event);
   }
 
-  onSelected(){
-    this.eventService.eventSelected.emit(this.event);
-
-  }
 
 }

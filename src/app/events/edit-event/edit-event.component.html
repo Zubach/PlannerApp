@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="form-group">
+    <label >Title</label>
+    <input [(ngModel)]="event.title" type="text" class="form-control" placeholder="Enter title" >
+
+  </div>
+  <div class="form-group">
+    <label >Description</label>
+    <input [(ngModel)]="event.description"  type="text" class="form-control"  placeholder="Description" >
+  </div>
+  <div class="form-group">
+      <label >Image</label>
+      <input [(ngModel)]="event.image"  type="text" class="form-control"  placeholder="Image" >
+  </div>
+  <div class="form-group">
+    <label >Your image:</label>
+      <img src={{event.image}} alt="">
+  </div>
+  <a type="submit" class="btn btn-primary" (click)="editEvent()" [routerLink]="['/events']">Edit</a>
+</div>

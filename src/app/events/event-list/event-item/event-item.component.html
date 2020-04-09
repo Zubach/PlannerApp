@@ -1,10 +1,11 @@
 
-<div class="list-group" (click)="onSelected()">
+<a [routerLink]="[index]" class="list-group" >
 
     <h4 class="list-group-heading">
         {{event.title}}
     </h4>
 
     <img class="img-fluid" [src]="event.image" alt="">
-</div>
+  </a>
 <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+<a class="btn btn-info" [routerLink]="['/edit-event', index]">Edit</a>

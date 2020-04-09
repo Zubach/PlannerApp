@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Requirement} from './requirement.model'
+import { RequirementServiceService } from './requirement-service.service';
 
 @Component({
   selector: 'app-requirements',
@@ -8,17 +9,18 @@ import {Requirement} from './requirement.model'
 })
 export class RequirementsComponent implements OnInit {
 
- 
 
-  requirements: Requirement[] = [
-    new Requirement("112313213","12312132131"),
-    new Requirement("112313213","12312132131"),
-    new Requirement("112313213","12312132131")
-  ];
 
-  constructor() { }
+  requirements: Requirement[] ;
+  constructor(private requirementService: RequirementServiceService) { }
 
   ngOnInit(): void {
+
+    this.requirements = this.requirementService.getRequirements();
+
+    this.requirementService.requirementUpdate.subscribe((requirements: Requirement[]) => {
+      this.requirements = requirements;
+    });
   }
 
 }

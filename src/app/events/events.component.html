@@ -3,15 +3,17 @@
   <div class="row">
       <div class="col">
         <div class="row">
-          <app-add-event></app-add-event>
+          
           <div class="col-md-5">
               <app-event-list></app-event-list>
           </div>
 
-      <app-event-details *ngIf="temp; else infoText" [eventDetail]="temp"></app-event-details>
-      <ng-template #infoText>
-          <p>Choose event</p>
-      </ng-template>
+          <div class="col-md-5">
+            <router-outlet>
+
+            </router-outlet>
+          </div>
+
       </div>
       </div>
   </div>

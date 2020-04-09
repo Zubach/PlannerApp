@@ -24,7 +24,7 @@ export class EventService {
   addEvent(event: Event): void{
     this.events.push(event);
     this.eventUpdate.emit(this.events);
-    console.log(this.events);
+
   }
   deleteEvent(event: Event): void{
 
@@ -35,6 +35,16 @@ export class EventService {
     this.eventUpdate.emit(this.events);
 
     console.log(this.events);
+  }
+
+  getEventById(index: number): Event{
+
+    return this.events[index];
+  }
+
+  editEvent(index: number, newEvent: Event): void{
+    this.events[index] = newEvent;
+    this.eventUpdate.emit(this.events);
   }
 
   constructor() { }
